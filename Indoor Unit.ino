@@ -1,4 +1,7 @@
-// Indoor unit pseudocode code
+// Alex Castillo - Indoor Unit Code
+// Sources: 
+// https://nrf24.github.io/RF24/ (used for RF24 library and understanding pinout)
+// https://howtomechatronics.com/tutorials/arduino/arduino-wireless-communication-nrf24l01-tutorial/ (starter code taken from this site to get transievers working)
 #include <LiquidCrystal.h>
 #include <SPI.h>
 #include <nRF24L01.h>
@@ -57,6 +60,7 @@ void printTemperatureUnit() {
   }
 }
 
+// Displays both indoor and outdoor temperature
 void displayTemperatureInformation() {
     lcd.clear();
     lcd.print("Outdoor: ");
@@ -77,6 +81,7 @@ void displayTemperatureInformation() {
     printTemperatureUnit();
 }
 
+// Shows the temperature delta between indoor and outdoor unit
 void displayTemperatureDeltas() {
   lcd.clear();
   lcd.print("It is ");
